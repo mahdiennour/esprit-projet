@@ -1,0 +1,1 @@
+gcc labyrinth.C labyrinth.h Perfect_Collision.c Perfect_Collision.h -o prog -lSDL -lSDL_image -lSDL_mixer -lSDL_ttf
