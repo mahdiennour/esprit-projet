@@ -1,0 +1,9 @@
+Code compilation:
+
+gcc laby.c fonctions.c main.c constantes.h affichage.h algorithme.h -o prog -lSDL -lSDL_image -lSDL_mixer -lSDL_ttf
+
+
+
+
+
+il y a des au niveau de problemes de detection de collisions.
