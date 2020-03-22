@@ -1,0 +1,62 @@
+Will_tyche_survive_russian_roulet_with_5_bullets? Yes No
+Will_tyche_survive_russian_roulet_with_1_bullet? Yes No
+Is_Hermus_the_ultimate_athlete? Yes No
+Is_Apollo_the_ultimate_athlete? Yes No
+Is_Tyche_the_ultimate_athlete? Yes No
+Is_Spiral_the_ultimate_athlete? Yes No
+Is_Elpis_the_ultimate_athlete? Yes No
+Is_Hermus_the_ultimate_programmer? Yes No
+Is_Apollo_the_ultimate_programmer? Yes No
+Is_Tyche_the_ultimate_programmer? Yes No
+Is_Spiral_the_ultimate_programmer? Yes No
+Is_Elpis_the_ultimate_programmer? Yes No
+Is_Hermus_the_ultimate_Luck? Yes No
+Is_Apollo_the_ultimate_Luck? Yes No
+Is_Tyche_the_ultimate_Luck? Yes No
+Is_Spiral_the_ultimate_Luck? Yes No
+Is_Elpis_the_ultimate_Luck? Yes No
+Is_Hermus_the_ultimate_hope? Yes No
+Is_Apollo_the_ultimate_hope? Yes No
+Is_Tyche_the_ultimate_hope? Yes No
+Is_Spiral_the_ultimate_hope? Yes No
+Is_Elpis_the_ultimate_hope? Yes No
+Is_Hermus_a_normal_human? Yes No
+Is_Apollo_a_normal_human? Yes No
+Is_Tyche_a_normal_human? Yes No
+Is_Spiral_a_normal_human? Yes No
+Is_Elpis_a_normal_human? Yes No
+Can_Hermus_double_jump? Yes No
+Can_Apollo_double_jump? Yes No
+Can_Tyche_double_jump? Yes No
+Can_Spiral_double_jump? Yes No
+Can_Elpis_double_jump? Yes No
+Can_Hermus_support_his_allies? Yes No
+Can_Apollo_support_his_allies? Yes No
+Can_Tyche_support_his_allies? Yes No
+Can_Spiral_support_his_allies? Yes No
+Can_Elpis_support_her_allies? Yes No
+Is_Hermus_always_scared? Yes No
+Is_Apollo_always_scared? Yes No
+Is_Tyche_always_scared? Yes No
+Is_Spiral_always_scared? Yes No
+Is_Elpis_always_scared? Yes No
+Does_Hermus_hate_violence? Yes No
+Does_Apollo_hate_violence? Yes No
+Does_Tyche_hate_violence? Yes No
+Does_Spiral_hate_violence? Yes No
+Does_Elpis_hate_violence? Yes No
+Are_ultimates_a_myth? Yes No
+Is_Adolph_Hitler_an_Ultimate? Yes No
+Are_ultimates_humans? Yes No
+
+
+
+
+
+
+
+
+
+
+
+
