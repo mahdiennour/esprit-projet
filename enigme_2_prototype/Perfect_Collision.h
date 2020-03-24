@@ -11,7 +11,7 @@
 
 
 int Collision_Parfaite();
-SDL_Color GetPixel(SDL_Surface *background ,int x, int y);
+SDL_Color GetPixel(SDL_Surface *back ,int x, int y);
 
 
 
