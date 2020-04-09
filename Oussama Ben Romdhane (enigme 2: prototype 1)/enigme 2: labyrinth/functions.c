@@ -178,6 +178,7 @@ if(event.type==SDL_QUIT)
 {
 SDL_FillRect(ecran, NULL, SDL_MapRGB(ecran->format, 0, 0, 0));
 SDL_Quit();
+continuer=0;
 }
 
 else{
