@@ -134,6 +134,7 @@ SDL_Rect positiontexte,positiontexte1,positionback;
 
 back =SDL_LoadBMP("back.bmp");
 
+
 positionback.x=0;
 positionback.y=0;
 
@@ -141,7 +142,7 @@ positionback.y=0;
 positiontexte.x=back->w/3;
 positiontexte.y=back->h/3.5;
 positiontexte1.x=back->w/5;
-positiontexte1.y=back->h/2;
+positiontexte1.y=back->w/2;
 
 
 
@@ -178,7 +179,7 @@ if(event.type==SDL_QUIT)
 {
 SDL_FillRect(ecran, NULL, SDL_MapRGB(ecran->format, 0, 0, 0));
 SDL_Quit();
-continuer=0;
+
 }
 
 else{
@@ -271,9 +272,12 @@ SDL_Flip(ecran);
 
 
 
-if((positionplayer.x+player->w)>back->w)
+
+
+
+if((positionplayer.x+player->w)>back->w-2)
 {positionplayer.x =1;}
-if((positionplayer.y+player->h)>back->h)
+if((positionplayer.y+player->h)>back->h-2)
 {positionplayer.y =1;}
 if(positionplayer.x==0)
 {positionplayer.x=positionplayer.x-player->w+back->w;}
@@ -378,6 +382,11 @@ x=positionplayer.x=xa;
 collision=0;*/
 }}
 }
+
+
+
+
+
 
 
 
