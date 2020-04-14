@@ -77,10 +77,10 @@ int deplacement(hero evan,SDL_Event *event){
 	            case SDLK_ESCAPE:
 	                mouv=0;
 	                break;
-	            case SDLK_RIGHT:
+	            case SDLK_RIGHT: //flechedroite//
 			mouv=1;
 	                break;
-	            case SDLK_LEFT:	            
+	            case SDLK_LEFT: 	            
                        mouv=2;          
 	                break;
 	            case SDLK_UP: 
