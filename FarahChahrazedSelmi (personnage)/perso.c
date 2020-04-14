@@ -96,7 +96,8 @@ int deplacement(hero evan,SDL_Event *event){
 	}
 
 
-
+ 
+//tester//
 int main(  int argc,  char *argv[]  )
 {
 		SDL_Surface *ecran =NULL;
