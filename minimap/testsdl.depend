@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1148140048 c:\documents and settings\mateo\mes documents\sites\site du zér0 - tutos\c-c++\tests\testsdl\main.c
+	<stdlib.h>
+	<stdio.h>
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	<SDL/SDL_ttf.h>
+
+1144495676 c:\documents and settings\mateo21\mes documents\sites\sdz - ecriture\c-c++\tests\testsdl\main.c
+	<stdlib.h>
+	<stdio.h>
+	<SDL/SDL.h>
+
