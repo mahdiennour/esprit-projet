@@ -10,10 +10,7 @@
 
 SDL_Surface* fenetre;
 
-char nom[50];
-char prn[50];
-int id;
-int sound=1;
+
 char scpapi[20];
 SDL_Event event;
 struct jr
@@ -93,14 +90,14 @@ void score(time_t t1)
     int diff=0;
     char temps[10];
     char lose[]="YOU LOSE!";
-    char quit[]="press q to quit";
+    char quit1[]="press q to quit";
     char timelimit[]="Time Limit";
     char timelimit_1[]="5 mins";
-    int continuer=1;
     time_t t2;
 
     t2 = time(NULL);
     diff=difftime(t2, t1);
+
 
     while(diff>=3600)
     {
@@ -112,14 +109,15 @@ void score(time_t t1)
         diff=diff-60;
         minute++;
 
+}
+   
+ seconde=diff;
 
-while (continuer)
-{
-if (minute==5)
+while (minute>=5)
 {
 SDL_FillRect(fenetre, NULL, SDL_MapRGB(fenetre->format, 0, 0, 0));
 afficher_texte(300,200,70,lose,255,0,0);
-afficher_texte(200,300,70,quit,255,0,0);
+afficher_texte(200,300,70,quit1,255,0,0);
 SDL_Flip(fenetre);
 
 if (SDL_WaitEvent(&event)) {
@@ -127,16 +125,11 @@ if(event.type == SDL_KEYDOWN)
   {
     if (event.key.keysym.sym == SDLK_q)
      {
-SDL_FillRect(fenetre, NULL, SDL_MapRGB(fenetre->format, 0, 0, 0));
 SDL_Quit();
-continuer=0;
      }
   }
 }
 }
-}
-}
-    seconde=diff;
 
 
 
@@ -351,12 +344,8 @@ void cas1()
     imaged9.x = 720;
     imaged9.y = 440;
     SDL_BlitSurface( carre9 ,NULL, fenetre, &imaged9 );
-    SDL_Flip(fenetre);
+SDL_Flip(fenetre);
 
-    SDL_Surface* aa = IMG_Load("Fichiers/cas2/fin.png");
-    SDL_Rect aaa;
-    aaa.x = 0;
-    aaa.y = 0;
 
 
     /**Fin  Images 9 carre **/
@@ -1000,6 +989,26 @@ void cas1()
         SDL_BlitSurface( carre9 ,NULL, fenetre, &imaged9 );
         SDL_Flip(fenetre);
     }
+int continuer=1;
+while (continuer)
+{
+SDL_FillRect(fenetre, NULL, SDL_MapRGB(fenetre->format, 0, 0, 0));
+char end[]="YOU WIN!";
+char quit2[]="press q to quit";
+afficher_texte(300,200,70,end,0,255,0);
+afficher_texte(200,300,70,quit2,0,255,0);
+SDL_Flip(fenetre);
+
+if (SDL_WaitEvent(&event)) {
+if(event.type == SDL_KEYDOWN) 
+  {
+    if (event.key.keysym.sym == SDLK_q)
+     {
+continuer=0;
+     }
+  }
+}
+}
     cleanup();
 
 }
@@ -1171,10 +1180,7 @@ void cas2()
     SDL_BlitSurface( carre9 ,NULL, fenetre, &imaged9 );
     SDL_Flip(fenetre);
 
-    SDL_Surface* aa = IMG_Load("Fichiers/cas2/fin.png");
-    SDL_Rect aaa;
-    aaa.x = 0;
-    aaa.y = 0;
+
 
 
     /**Fin  Images 9 carre **/
@@ -1819,6 +1825,26 @@ void cas2()
         SDL_BlitSurface( carre9 ,NULL, fenetre, &imaged9 );
         SDL_Flip(fenetre);
     }
+int continuer=1;
+while (continuer)
+{
+SDL_FillRect(fenetre, NULL, SDL_MapRGB(fenetre->format, 0, 0, 0));
+char end[]="YOU WIN!";
+char quit2[]="press q to quit";
+afficher_texte(300,200,70,end,0,255,0);
+afficher_texte(200,300,70,quit2,0,255,0);
+SDL_Flip(fenetre);
+
+if (SDL_WaitEvent(&event)) {
+if(event.type == SDL_KEYDOWN) 
+  {
+    if (event.key.keysym.sym == SDLK_q)
+     {
+continuer=0;
+     }
+  }
+}
+}
     cleanup();
 
 }
@@ -1993,10 +2019,7 @@ void cas3()
     SDL_BlitSurface( carre9 ,NULL, fenetre, &imaged9 );
     SDL_Flip(fenetre);
 
-    SDL_Surface* aa = IMG_Load("Fichiers/cas2/fin.png");
-    SDL_Rect aaa;
-    aaa.x = 0;
-    aaa.y = 0;
+
 
 
     /**Fin  Images 9 carre **/
@@ -2642,7 +2665,26 @@ void cas3()
         SDL_Flip(fenetre);
     }
 
-    
+  int continuer=1;
+while (continuer)
+{
+SDL_FillRect(fenetre, NULL, SDL_MapRGB(fenetre->format, 0, 0, 0));
+char end[]="YOU WIN!";
+char quit2[]="press q to quit";
+afficher_texte(300,200,70,end,0,255,0);
+afficher_texte(200,300,70,quit2,0,255,0);
+SDL_Flip(fenetre);
+
+if (SDL_WaitEvent(&event)) {
+if(event.type == SDL_KEYDOWN) 
+  {
+    if (event.key.keysym.sym == SDLK_q)
+     {
+continuer=0;
+     }
+  }
+}
+}  
     cleanup();
 
 }
@@ -2816,10 +2858,7 @@ void cas4()
     SDL_BlitSurface( carre9 ,NULL, fenetre, &imaged9 );
     SDL_Flip(fenetre);
 
-    SDL_Surface* aa = IMG_Load("Fichiers/cas2/fin.png");
-    SDL_Rect aaa;
-    aaa.x = 0;
-    aaa.y = 0;
+
 
 
     /**Fin  Images 9 carre **/
@@ -3465,7 +3504,26 @@ void cas4()
         SDL_Flip(fenetre);
     }
 
-    
+int continuer=1;
+while (continuer)
+{
+SDL_FillRect(fenetre, NULL, SDL_MapRGB(fenetre->format, 0, 0, 0));
+char end[]="YOU WIN!";
+char quit2[]="press q to quit";
+afficher_texte(300,200,70,end,0,255,0);
+afficher_texte(200,300,70,quit2,0,255,0);
+SDL_Flip(fenetre);
+
+if (SDL_WaitEvent(&event)) {
+if(event.type == SDL_KEYDOWN) 
+  {
+    if (event.key.keysym.sym == SDLK_q)
+     {
+continuer=0;
+     }
+  }
+}
+}    
     cleanup();
 
 }
@@ -3638,10 +3696,7 @@ void cas5()
     SDL_BlitSurface( carre9 ,NULL, fenetre, &imaged9 );
     SDL_Flip(fenetre);
 
-    SDL_Surface* aa = IMG_Load("Fichiers/cas2/fin.png");
-    SDL_Rect aaa;
-    aaa.x = 0;
-    aaa.y = 0;
+
 
 
     /**Fin  Images 9 carre **/
@@ -4287,7 +4342,26 @@ void cas5()
         SDL_Flip(fenetre);
     }
 
-   
+ int continuer=1;
+while (continuer)
+{
+SDL_FillRect(fenetre, NULL, SDL_MapRGB(fenetre->format, 0, 0, 0));
+char end[]="YOU WIN!";
+char quit2[]="press q to quit";
+afficher_texte(300,200,70,end,0,255,0);
+afficher_texte(200,300,70,quit2,0,255,0);
+SDL_Flip(fenetre);
+
+if (SDL_WaitEvent(&event)) {
+if(event.type == SDL_KEYDOWN) 
+  {
+    if (event.key.keysym.sym == SDLK_q)
+     {
+continuer=0;
+     }
+  }
+}
+}  
     cleanup();
 
 }
@@ -4461,10 +4535,7 @@ void cas6()
     SDL_BlitSurface( carre9 ,NULL, fenetre, &imaged9 );
     SDL_Flip(fenetre);
 
-    SDL_Surface* aa = IMG_Load("Fichiers/cas2/fin.png");
-    SDL_Rect aaa;
-    aaa.x = 0;
-    aaa.y = 0;
+
 
 
     /**Fin  Images 9 carre **/
@@ -5111,7 +5182,26 @@ void cas6()
         SDL_Flip(fenetre);
     }
 
-   
+ int continuer=1;
+while (continuer)
+{
+SDL_FillRect(fenetre, NULL, SDL_MapRGB(fenetre->format, 0, 0, 0));
+char end[]="YOU WIN!";
+char quit2[]="press q to quit";
+afficher_texte(300,200,70,end,0,255,0);
+afficher_texte(200,300,70,quit2,0,255,0);
+SDL_Flip(fenetre);
+
+if (SDL_WaitEvent(&event)) {
+if(event.type == SDL_KEYDOWN) 
+  {
+    if (event.key.keysym.sym == SDLK_q)
+     {
+continuer=0;
+     }
+  }
+}
+}  
     cleanup();
 
 }
