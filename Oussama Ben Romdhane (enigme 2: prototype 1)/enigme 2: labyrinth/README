@@ -1,6 +1,6 @@
 Code compilation:
 
-gcc generate_laby.c fonctions.c laby_main.c constantes.h affichage.h algorithme.h -o prog -lSDL -lSDL_image -lSDL_mixer -lSDL_ttf
+gcc generate_laby.c functions.c laby_main.c constantes.h affichage.h algorithme.h -o prog -lSDL -lSDL_image -lSDL_mixer -lSDL_ttf
 
 
 
