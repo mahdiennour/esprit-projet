@@ -35,7 +35,7 @@ int bk2=0;
     ecran = SDL_SetVideoMode( 800,600, 32, SDL_HWSURFACE| SDL_DOUBLEBUF | SDL_RESIZABLE );
     SDL_WM_SetCaption("VIDEOGAME", NULL);
 
-    back = IMG_Load("fondsauvgarde.jpg");
+    back = IMG_Load("fond.jpg");
     quit1 = IMG_Load("quit1.png");
     quit2= IMG_Load ("quit2.png");
     retour=IMG_Load("retour.jpg");
