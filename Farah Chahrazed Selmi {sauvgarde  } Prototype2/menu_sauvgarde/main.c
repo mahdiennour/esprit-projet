@@ -24,8 +24,8 @@ int bk2=0;
 
     positionback.x=0;
     positionback.y=0;
-    positionquit.x=220;
-    positionquit.y=150;
+    positionquit.x=500;
+    positionquit.y=500;
     positionretour.x=200;
     positionretour.y=500;
 
