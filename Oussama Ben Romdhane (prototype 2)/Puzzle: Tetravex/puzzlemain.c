@@ -11,16 +11,7 @@
 SDL_Surface* fenetre;
 
 
-char scpapi[20];
 SDL_Event event;
-struct jr
-{
-
-    char score[50];
-    char dte[300];
-};
-typedef struct jr jr;
-
 
 
 void attendre(float temps);
@@ -34,39 +25,10 @@ void cas4 ();
 void cas5 ();
 void cas6 ();
 void game();
-void datesys(char ch[]);
-
-void ranking();
-
-void datesys(char ch[])
-{
-    time_t rawtime;
-    struct tm * timeinfo;
-    time ( &rawtime );
-    timeinfo = localtime ( &rawtime );
-    strcpy(ch, asctime (timeinfo));
-}
 
 
 
 
-
-
-void win()
-{
-    jr j;
-    char s[200];
-    char sc[20];
-
-    datesys(j.dte);
-
-    FILE * fp2=fopen("Fichiers/time/time.txt","r");
-    fgets(sc,20,fp2);
-    fclose(fp2);
-    sprintf(scpapi,"%s",sc);
-    sc[strlen(sc)-1]='\0';
-
-}
 
 
 
@@ -82,7 +44,7 @@ int main(int argc,char** argv)
     return 0;
 }
 
-void score(time_t t1)
+void temps(time_t t1)
 {
     int seconde=0;
     int minute=0;
@@ -185,12 +147,12 @@ void cas1()
     t1 = time(NULL);
     int onclick = 0;
     SDL_Event event;
-    int g = rand() % 3;
+   
 
 
 
 
-    /**Debut  Images btn btr est Grille **/
+    
 
     SDL_Surface* bg = IMG_Load("Fichiers/cas1/bg.png");
     SDL_Rect imagebg;
@@ -274,9 +236,9 @@ void cas1()
     SDL_BlitSurface( grille9 ,NULL, fenetre, &imagegd9 );
     SDL_Flip(fenetre);
 
-    /**Fin  Images btn btr est Grille **/
+   
 
-    /**Debut  Images 9 carre **/
+    
 
     SDL_Surface* carre1 = IMG_Load("Fichiers/cas1/11.png");
     SDL_Rect imaged1;
@@ -348,11 +310,10 @@ SDL_Flip(fenetre);
 
 
 
-    /**Fin  Images 9 carre **/
 
-    /**Debut While(1) **/
+  
 
-    while(!((((imaged1.x==imagegd1.x)&&(imaged1.x==imagegd1.x))&&((imaged1.y==imagegd1.y)&&(imaged1.y==imagegd1.y)))&&(((imaged2.x==imagegd2.x)&&(imaged2.x==imagegd2.x))&&((imaged2.y==imagegd2.y)&&(imaged2.y==imagegd2.y)))&&(((imaged3.x==imagegd3.x)&&(imaged3.x==imagegd3.x))&&((imaged3.y==imagegd3.y)&&(imaged3.y==imagegd3.y)))&&(((imaged4.x==imagegd4.x)&&(imaged4.x==imagegd4.x))&&((imaged4.y==imagegd4.y)&&(imaged4.y==imagegd4.y)))&&(((imaged5.x==imagegd5.x)&&(imaged5.x==imagegd5.x))&&((imaged5.y==imagegd5.y)&&(imaged5.y==imagegd5.y)))&&(((imaged6.x==imagegd6.x)&&(imaged6.x==imagegd6.x))&&((imaged6.y==imagegd6.y)&&(imaged6.y==imagegd6.y)))&&(((imaged7.x==imagegd7.x)&&(imaged7.x==imagegd7.x))&&((imaged7.y==imagegd7.y)&&(imaged7.y==imagegd7.y)))&&(((imaged8.x==imagegd8.x)&&(imaged8.x==imagegd8.x))&&((imaged8.y==imagegd8.y)&&(imaged8.y==imagegd8.y)))&&(((imaged9.x==imagegd9.x)&&(imaged9.x==imagegd9.x))&&((imaged9.y==imagegd9.y)&&(imaged9.y==imagegd9.y)))))
+    while(!(((imaged1.x==imagegd1.x)&&(imaged1.y==imagegd1.y))&&((imaged2.x==imagegd2.x)&&(imaged2.y==imagegd2.y))&&((imaged3.x==imagegd3.x)&&(imaged3.y==imagegd3.y))&&((imaged4.x==imagegd4.x)&&(imaged4.y==imagegd4.y))&&((imaged5.x==imagegd5.x)&&(imaged5.y==imagegd5.y))&&((imaged6.x==imagegd6.x)&&(imaged6.y==imagegd6.y))&&((imaged7.x==imagegd7.x)&&(imaged7.y==imagegd7.y))&&((imaged8.x==imagegd8.x)&&(imaged8.y==imagegd8.y))&&((imaged9.x==imagegd9.x)&&(imaged9.y==imagegd9.y))))
     {
         while (SDL_PollEvent(&event))
         {
@@ -434,6 +395,54 @@ SDL_Flip(fenetre);
                         }
                     }
                   
+                }
+            }
+ if(event.type == SDL_MOUSEMOTION)
+            {
+                if( onclick==1 )
+                {
+                    imaged1.x = event.motion.x-(carre1->w/2);
+                    imaged1.y = event.motion.y-(carre1->h/2);
+                }
+                if( onclick==2 )
+                {
+                    imaged2.x = event.motion.x-(carre2->w/2);
+                    imaged2.y = event.motion.y-(carre2->h/2);
+                }
+                if( onclick==3 )
+                {
+                    imaged3.x = event.motion.x-(carre3->w/2);
+                    imaged3.y = event.motion.y-(carre3->h/2);
+                }
+                if( onclick==4 )
+                {
+                    imaged4.x = event.motion.x-(carre4->w/2);
+                    imaged4.y = event.motion.y-(carre4->h/2);
+                }
+                if( onclick==5 )
+                {
+                    imaged5.x = event.motion.x-(carre5->w/2);
+                    imaged5.y = event.motion.y-(carre5->h/2);
+                }
+                if( onclick==6 )
+                {
+                    imaged6.x = event.motion.x-(carre6->w/2);
+                    imaged6.y = event.motion.y-(carre6->h/2);
+                }
+                if( onclick==7 )
+                {
+                    imaged7.x = event.motion.x-(carre7->w/2);
+                    imaged7.y = event.motion.y-(carre7->h/2);
+                }
+                if( onclick==8 )
+                {
+                    imaged8.x = event.motion.x-(carre8->w/2);
+                    imaged8.y = event.motion.y-(carre8->h/2);
+                }
+                if( onclick==9 )
+                {
+                    imaged9.x = event.motion.x-(carre9->w/2);
+                    imaged9.y = event.motion.y-(carre9->h/2);
                 }
             }
             if(event.type == SDL_MOUSEBUTTONUP)
@@ -864,6 +873,22 @@ SDL_Flip(fenetre);
                 onclick = 0;
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 if((imaged1.x>imagegd3.x+imagegd3.w) || (imaged1.x<imagegd1.x) || (imaged1.y>imagegd9.y+imagegd9.h) || (imaged1.y<imagegd1.y) )
                 {
                     imaged1.x = 720;
@@ -915,59 +940,12 @@ SDL_Flip(fenetre);
 
                 break;
             }
-            if(event.type == SDL_MOUSEMOTION)
-            {
-                if( onclick==1 )
-                {
-                    imaged1.x = event.motion.x-(carre1->w/2);
-                    imaged1.y = event.motion.y-(carre1->h/2);
-                }
-                if( onclick==2 )
-                {
-                    imaged2.x = event.motion.x-(carre2->w/2);
-                    imaged2.y = event.motion.y-(carre2->h/2);
-                }
-                if( onclick==3 )
-                {
-                    imaged3.x = event.motion.x-(carre3->w/2);
-                    imaged3.y = event.motion.y-(carre3->h/2);
-                }
-                if( onclick==4 )
-                {
-                    imaged4.x = event.motion.x-(carre4->w/2);
-                    imaged4.y = event.motion.y-(carre4->h/2);
-                }
-                if( onclick==5 )
-                {
-                    imaged5.x = event.motion.x-(carre5->w/2);
-                    imaged5.y = event.motion.y-(carre5->h/2);
-                }
-                if( onclick==6 )
-                {
-                    imaged6.x = event.motion.x-(carre6->w/2);
-                    imaged6.y = event.motion.y-(carre6->h/2);
-                }
-                if( onclick==7 )
-                {
-                    imaged7.x = event.motion.x-(carre7->w/2);
-                    imaged7.y = event.motion.y-(carre7->h/2);
-                }
-                if( onclick==8 )
-                {
-                    imaged8.x = event.motion.x-(carre8->w/2);
-                    imaged8.y = event.motion.y-(carre8->h/2);
-                }
-                if( onclick==9 )
-                {
-                    imaged9.x = event.motion.x-(carre9->w/2);
-                    imaged9.y = event.motion.y-(carre9->h/2);
-                }
-            }
+           
         }
         SDL_FillRect(fenetre, 0, SDL_MapRGB(fenetre->format, 2, 33, 0));
 
         SDL_BlitSurface( bg ,NULL, fenetre, &imagebg );
-        score(t1);
+        temps(t1);
         SDL_BlitSurface( grille1 ,NULL, fenetre, &imagegd1 );
         SDL_BlitSurface( grille2 ,NULL, fenetre, &imagegd2 );
         SDL_BlitSurface( grille3 ,NULL, fenetre, &imagegd3 );
@@ -1020,11 +998,11 @@ void cas2()
     t1 = time(NULL);
     int onclick = 0;
     SDL_Event event;
-    int g = rand() % 3;
 
 
 
-    /**Debut  Images btn btr est Grille **/
+
+   
 
     SDL_Surface* bg = IMG_Load("Fichiers/cas1/bg.png");
     SDL_Rect imagebg;
@@ -1108,9 +1086,7 @@ void cas2()
     SDL_BlitSurface( grille9 ,NULL, fenetre, &imagegd9 );
     SDL_Flip(fenetre);
 
-    /**Fin  Images btn btr est Grille **/
-
-    /**Debut  Images 9 carre **/
+   
 
     SDL_Surface* carre1 = IMG_Load("Fichiers/cas3/11.png");
     SDL_Rect imaged1;
@@ -1183,11 +1159,8 @@ void cas2()
 
 
 
-    /**Fin  Images 9 carre **/
 
-    /**Debut While(1) **/
-
-    while(!((((imaged1.x==imagegd1.x)&&(imaged1.x==imagegd1.x))&&((imaged1.y==imagegd1.y)&&(imaged1.y==imagegd1.y)))&&(((imaged2.x==imagegd2.x)&&(imaged2.x==imagegd2.x))&&((imaged2.y==imagegd2.y)&&(imaged2.y==imagegd2.y)))&&(((imaged3.x==imagegd3.x)&&(imaged3.x==imagegd3.x))&&((imaged3.y==imagegd3.y)&&(imaged3.y==imagegd3.y)))&&(((imaged4.x==imagegd4.x)&&(imaged4.x==imagegd4.x))&&((imaged4.y==imagegd4.y)&&(imaged4.y==imagegd4.y)))&&(((imaged5.x==imagegd5.x)&&(imaged5.x==imagegd5.x))&&((imaged5.y==imagegd5.y)&&(imaged5.y==imagegd5.y)))&&(((imaged6.x==imagegd6.x)&&(imaged6.x==imagegd6.x))&&((imaged6.y==imagegd6.y)&&(imaged6.y==imagegd6.y)))&&(((imaged7.x==imagegd7.x)&&(imaged7.x==imagegd7.x))&&((imaged7.y==imagegd7.y)&&(imaged7.y==imagegd7.y)))&&(((imaged8.x==imagegd8.x)&&(imaged8.x==imagegd8.x))&&((imaged8.y==imagegd8.y)&&(imaged8.y==imagegd8.y)))&&(((imaged9.x==imagegd9.x)&&(imaged9.x==imagegd9.x))&&((imaged9.y==imagegd9.y)&&(imaged9.y==imagegd9.y)))))
+    while(!(((imaged1.x==imagegd1.x)&&(imaged1.y==imagegd1.y))&&((imaged2.x==imagegd2.x)&&(imaged2.y==imagegd2.y))&&((imaged3.x==imagegd3.x)&&(imaged3.y==imagegd3.y))&&((imaged4.x==imagegd4.x)&&(imaged4.y==imagegd4.y))&&((imaged5.x==imagegd5.x)&&(imaged5.y==imagegd5.y))&&((imaged6.x==imagegd6.x)&&(imaged6.y==imagegd6.y))&&((imaged7.x==imagegd7.x)&&(imaged7.y==imagegd7.y))&&((imaged8.x==imagegd8.x)&&(imaged8.y==imagegd8.y))&&((imaged9.x==imagegd9.x)&&(imaged9.y==imagegd9.y))))
     {
         while (SDL_PollEvent(&event))
         {
@@ -1803,7 +1776,7 @@ void cas2()
         SDL_FillRect(fenetre, 0, SDL_MapRGB(fenetre->format, 2, 33, 0));
 
         SDL_BlitSurface( bg ,NULL, fenetre, &imagebg );
-        score(t1);
+        temps(t1);
         SDL_BlitSurface( grille1 ,NULL, fenetre, &imagegd1 );
         SDL_BlitSurface( grille2 ,NULL, fenetre, &imagegd2 );
         SDL_BlitSurface( grille3 ,NULL, fenetre, &imagegd3 );
@@ -1858,11 +1831,11 @@ void cas3()
     t1 = time(NULL);
     int onclick = 0;
     SDL_Event event;
-    int g = rand() % 3;
+   
 
 
 
-    /**Debut  Images btn btr est Grille **/
+
 
     SDL_Surface* bg = IMG_Load("Fichiers/cas1/bg.png");
     SDL_Rect imagebg;
@@ -1947,9 +1920,7 @@ void cas3()
     SDL_BlitSurface( grille9 ,NULL, fenetre, &imagegd9 );
     SDL_Flip(fenetre);
 
-    /**Fin  Images btn btr est Grille **/
-
-    /**Debut  Images 9 carre **/
+   
 
     SDL_Surface* carre1 = IMG_Load("Fichiers/cas2/11.png");
     SDL_Rect imaged1;
@@ -2022,11 +1993,9 @@ void cas3()
 
 
 
-    /**Fin  Images 9 carre **/
+    
 
-    /**Debut While(1) **/
-
-    while(!((((imaged1.x==imagegd1.x)&&(imaged1.x==imagegd1.x))&&((imaged1.y==imagegd1.y)&&(imaged1.y==imagegd1.y)))&&(((imaged2.x==imagegd2.x)&&(imaged2.x==imagegd2.x))&&((imaged2.y==imagegd2.y)&&(imaged2.y==imagegd2.y)))&&(((imaged3.x==imagegd3.x)&&(imaged3.x==imagegd3.x))&&((imaged3.y==imagegd3.y)&&(imaged3.y==imagegd3.y)))&&(((imaged4.x==imagegd4.x)&&(imaged4.x==imagegd4.x))&&((imaged4.y==imagegd4.y)&&(imaged4.y==imagegd4.y)))&&(((imaged5.x==imagegd5.x)&&(imaged5.x==imagegd5.x))&&((imaged5.y==imagegd5.y)&&(imaged5.y==imagegd5.y)))&&(((imaged6.x==imagegd6.x)&&(imaged6.x==imagegd6.x))&&((imaged6.y==imagegd6.y)&&(imaged6.y==imagegd6.y)))&&(((imaged7.x==imagegd7.x)&&(imaged7.x==imagegd7.x))&&((imaged7.y==imagegd7.y)&&(imaged7.y==imagegd7.y)))&&(((imaged8.x==imagegd8.x)&&(imaged8.x==imagegd8.x))&&((imaged8.y==imagegd8.y)&&(imaged8.y==imagegd8.y)))&&(((imaged9.x==imagegd9.x)&&(imaged9.x==imagegd9.x))&&((imaged9.y==imagegd9.y)&&(imaged9.y==imagegd9.y)))))
+    while(!(((imaged1.x==imagegd1.x)&&(imaged1.y==imagegd1.y))&&((imaged2.x==imagegd2.x)&&(imaged2.y==imagegd2.y))&&((imaged3.x==imagegd3.x)&&(imaged3.y==imagegd3.y))&&((imaged4.x==imagegd4.x)&&(imaged4.y==imagegd4.y))&&((imaged5.x==imagegd5.x)&&(imaged5.y==imagegd5.y))&&((imaged6.x==imagegd6.x)&&(imaged6.y==imagegd6.y))&&((imaged7.x==imagegd7.x)&&(imaged7.y==imagegd7.y))&&((imaged8.x==imagegd8.x)&&(imaged8.y==imagegd8.y))&&((imaged9.x==imagegd9.x)&&(imaged9.y==imagegd9.y))))
     {
         while (SDL_PollEvent(&event))
         {
@@ -2642,7 +2611,7 @@ void cas3()
         SDL_FillRect(fenetre, 0, SDL_MapRGB(fenetre->format, 2, 33, 0));
 
         SDL_BlitSurface( bg ,NULL, fenetre, &imagebg );
-        score(t1);
+        temps(t1);
         SDL_BlitSurface( grille1 ,NULL, fenetre, &imagegd1 );
         SDL_BlitSurface( grille2 ,NULL, fenetre, &imagegd2 );
         SDL_BlitSurface( grille3 ,NULL, fenetre, &imagegd3 );
@@ -2697,11 +2666,11 @@ void cas4()
     t1 = time(NULL);
     int onclick = 0;
     SDL_Event event;
-    int g = rand() % 3;
+   
 
 
 
-    /**Debut  Images btn btr est Grille **/
+ 
 
     SDL_Surface* bg = IMG_Load("Fichiers/cas1/bg.png");
     SDL_Rect imagebg;
@@ -2786,9 +2755,7 @@ void cas4()
     SDL_BlitSurface( grille9 ,NULL, fenetre, &imagegd9 );
     SDL_Flip(fenetre);
 
-    /**Fin  Images btn btr est Grille **/
-
-    /**Debut  Images 9 carre **/
+ 
 
     SDL_Surface* carre1 = IMG_Load("Fichiers/cas4/11.png");
     SDL_Rect imaged1;
@@ -2861,11 +2828,8 @@ void cas4()
 
 
 
-    /**Fin  Images 9 carre **/
 
-    /**Debut While(1) **/
-
-    while(!((((imaged1.x==imagegd1.x)&&(imaged1.x==imagegd1.x))&&((imaged1.y==imagegd1.y)&&(imaged1.y==imagegd1.y)))&&(((imaged2.x==imagegd2.x)&&(imaged2.x==imagegd2.x))&&((imaged2.y==imagegd2.y)&&(imaged2.y==imagegd2.y)))&&(((imaged3.x==imagegd3.x)&&(imaged3.x==imagegd3.x))&&((imaged3.y==imagegd3.y)&&(imaged3.y==imagegd3.y)))&&(((imaged4.x==imagegd4.x)&&(imaged4.x==imagegd4.x))&&((imaged4.y==imagegd4.y)&&(imaged4.y==imagegd4.y)))&&(((imaged5.x==imagegd5.x)&&(imaged5.x==imagegd5.x))&&((imaged5.y==imagegd5.y)&&(imaged5.y==imagegd5.y)))&&(((imaged6.x==imagegd6.x)&&(imaged6.x==imagegd6.x))&&((imaged6.y==imagegd6.y)&&(imaged6.y==imagegd6.y)))&&(((imaged7.x==imagegd7.x)&&(imaged7.x==imagegd7.x))&&((imaged7.y==imagegd7.y)&&(imaged7.y==imagegd7.y)))&&(((imaged8.x==imagegd8.x)&&(imaged8.x==imagegd8.x))&&((imaged8.y==imagegd8.y)&&(imaged8.y==imagegd8.y)))&&(((imaged9.x==imagegd9.x)&&(imaged9.x==imagegd9.x))&&((imaged9.y==imagegd9.y)&&(imaged9.y==imagegd9.y)))))
+    while(!(((imaged1.x==imagegd1.x)&&(imaged1.y==imagegd1.y))&&((imaged2.x==imagegd2.x)&&(imaged2.y==imagegd2.y))&&((imaged3.x==imagegd3.x)&&(imaged3.y==imagegd3.y))&&((imaged4.x==imagegd4.x)&&(imaged4.y==imagegd4.y))&&((imaged5.x==imagegd5.x)&&(imaged5.y==imagegd5.y))&&((imaged6.x==imagegd6.x)&&(imaged6.y==imagegd6.y))&&((imaged7.x==imagegd7.x)&&(imaged7.y==imagegd7.y))&&((imaged8.x==imagegd8.x)&&(imaged8.y==imagegd8.y))&&((imaged9.x==imagegd9.x)&&(imaged9.y==imagegd9.y))))
     {
         while (SDL_PollEvent(&event))
         {
@@ -3481,7 +3445,7 @@ void cas4()
         SDL_FillRect(fenetre, 0, SDL_MapRGB(fenetre->format, 2, 33, 0));
 
         SDL_BlitSurface( bg ,NULL, fenetre, &imagebg );
-        score(t1);
+        temps(t1);
         SDL_BlitSurface( grille1 ,NULL, fenetre, &imagegd1 );
         SDL_BlitSurface( grille2 ,NULL, fenetre, &imagegd2 );
         SDL_BlitSurface( grille3 ,NULL, fenetre, &imagegd3 );
@@ -3536,11 +3500,11 @@ void cas5()
     t1 = time(NULL);
     int onclick = 0;
     SDL_Event event;
-    int g = rand() % 3;
+    
 
 
 
-    /**Debut  Images btn btr est Grille **/
+ 
 
     SDL_Surface* bg = IMG_Load("Fichiers/cas1/bg.png");
     SDL_Rect imagebg;
@@ -3624,9 +3588,7 @@ void cas5()
     SDL_BlitSurface( grille9 ,NULL, fenetre, &imagegd9 );
     SDL_Flip(fenetre);
 
-    /**Fin  Images btn btr est Grille **/
 
-    /**Debut  Images 9 carre **/
 
     SDL_Surface* carre1 = IMG_Load("Fichiers/cas5/11.png");
     SDL_Rect imaged1;
@@ -3699,11 +3661,9 @@ void cas5()
 
 
 
-    /**Fin  Images 9 carre **/
 
-    /**Debut While(1) **/
 
-    while(!((((imaged1.x==imagegd1.x)&&(imaged1.x==imagegd1.x))&&((imaged1.y==imagegd1.y)&&(imaged1.y==imagegd1.y)))&&(((imaged2.x==imagegd2.x)&&(imaged2.x==imagegd2.x))&&((imaged2.y==imagegd2.y)&&(imaged2.y==imagegd2.y)))&&(((imaged3.x==imagegd3.x)&&(imaged3.x==imagegd3.x))&&((imaged3.y==imagegd3.y)&&(imaged3.y==imagegd3.y)))&&(((imaged4.x==imagegd4.x)&&(imaged4.x==imagegd4.x))&&((imaged4.y==imagegd4.y)&&(imaged4.y==imagegd4.y)))&&(((imaged5.x==imagegd5.x)&&(imaged5.x==imagegd5.x))&&((imaged5.y==imagegd5.y)&&(imaged5.y==imagegd5.y)))&&(((imaged6.x==imagegd6.x)&&(imaged6.x==imagegd6.x))&&((imaged6.y==imagegd6.y)&&(imaged6.y==imagegd6.y)))&&(((imaged7.x==imagegd7.x)&&(imaged7.x==imagegd7.x))&&((imaged7.y==imagegd7.y)&&(imaged7.y==imagegd7.y)))&&(((imaged8.x==imagegd8.x)&&(imaged8.x==imagegd8.x))&&((imaged8.y==imagegd8.y)&&(imaged8.y==imagegd8.y)))&&(((imaged9.x==imagegd9.x)&&(imaged9.x==imagegd9.x))&&((imaged9.y==imagegd9.y)&&(imaged9.y==imagegd9.y)))))
+   while(!(((imaged1.x==imagegd1.x)&&(imaged1.y==imagegd1.y))&&((imaged2.x==imagegd2.x)&&(imaged2.y==imagegd2.y))&&((imaged3.x==imagegd3.x)&&(imaged3.y==imagegd3.y))&&((imaged4.x==imagegd4.x)&&(imaged4.y==imagegd4.y))&&((imaged5.x==imagegd5.x)&&(imaged5.y==imagegd5.y))&&((imaged6.x==imagegd6.x)&&(imaged6.y==imagegd6.y))&&((imaged7.x==imagegd7.x)&&(imaged7.y==imagegd7.y))&&((imaged8.x==imagegd8.x)&&(imaged8.y==imagegd8.y))&&((imaged9.x==imagegd9.x)&&(imaged9.y==imagegd9.y))))
     {
         while (SDL_PollEvent(&event))
         {
@@ -4319,7 +4279,7 @@ void cas5()
         SDL_FillRect(fenetre, 0, SDL_MapRGB(fenetre->format, 2, 33, 0));
 
         SDL_BlitSurface( bg ,NULL, fenetre, &imagebg );
-        score(t1);
+        temps(t1);
         SDL_BlitSurface( grille1 ,NULL, fenetre, &imagegd1 );
         SDL_BlitSurface( grille2 ,NULL, fenetre, &imagegd2 );
         SDL_BlitSurface( grille3 ,NULL, fenetre, &imagegd3 );
@@ -4375,10 +4335,10 @@ void cas6()
     t1 = time(NULL);
     int onclick = 0;
     SDL_Event event;
-    int g = rand() % 3;
+    
 
 
-    /**Debut  Images btn btr est Grille **/
+   
 
     SDL_Surface* bg = IMG_Load("Fichiers/cas1/bg.png");
     SDL_Rect imagebg;
@@ -4463,9 +4423,7 @@ void cas6()
     SDL_BlitSurface( grille9 ,NULL, fenetre, &imagegd9 );
     SDL_Flip(fenetre);
 
-    /**Fin  Images btn btr est Grille **/
 
-    /**Debut  Images 9 carre **/
 
     SDL_Surface* carre1 = IMG_Load("Fichiers/cas6/11.png");
     SDL_Rect imaged1;
@@ -4538,11 +4496,8 @@ void cas6()
 
 
 
-    /**Fin  Images 9 carre **/
 
-    /**Debut While(1) **/
-
-    while(!((((imaged1.x==imagegd1.x)&&(imaged1.x==imagegd1.x))&&((imaged1.y==imagegd1.y)&&(imaged1.y==imagegd1.y)))&&(((imaged2.x==imagegd2.x)&&(imaged2.x==imagegd2.x))&&((imaged2.y==imagegd2.y)&&(imaged2.y==imagegd2.y)))&&(((imaged3.x==imagegd3.x)&&(imaged3.x==imagegd3.x))&&((imaged3.y==imagegd3.y)&&(imaged3.y==imagegd3.y)))&&(((imaged4.x==imagegd4.x)&&(imaged4.x==imagegd4.x))&&((imaged4.y==imagegd4.y)&&(imaged4.y==imagegd4.y)))&&(((imaged5.x==imagegd5.x)&&(imaged5.x==imagegd5.x))&&((imaged5.y==imagegd5.y)&&(imaged5.y==imagegd5.y)))&&(((imaged6.x==imagegd6.x)&&(imaged6.x==imagegd6.x))&&((imaged6.y==imagegd6.y)&&(imaged6.y==imagegd6.y)))&&(((imaged7.x==imagegd7.x)&&(imaged7.x==imagegd7.x))&&((imaged7.y==imagegd7.y)&&(imaged7.y==imagegd7.y)))&&(((imaged8.x==imagegd8.x)&&(imaged8.x==imagegd8.x))&&((imaged8.y==imagegd8.y)&&(imaged8.y==imagegd8.y)))&&(((imaged9.x==imagegd9.x)&&(imaged9.x==imagegd9.x))&&((imaged9.y==imagegd9.y)&&(imaged9.y==imagegd9.y)))))
+    while(!(((imaged1.x==imagegd1.x)&&(imaged1.y==imagegd1.y))&&((imaged2.x==imagegd2.x)&&(imaged2.y==imagegd2.y))&&((imaged3.x==imagegd3.x)&&(imaged3.y==imagegd3.y))&&((imaged4.x==imagegd4.x)&&(imaged4.y==imagegd4.y))&&((imaged5.x==imagegd5.x)&&(imaged5.y==imagegd5.y))&&((imaged6.x==imagegd6.x)&&(imaged6.y==imagegd6.y))&&((imaged7.x==imagegd7.x)&&(imaged7.y==imagegd7.y))&&((imaged8.x==imagegd8.x)&&(imaged8.y==imagegd8.y))&&((imaged9.x==imagegd9.x)&&(imaged9.y==imagegd9.y))))
     {
         while (SDL_PollEvent(&event))
         {
@@ -5158,7 +5113,7 @@ void cas6()
         SDL_FillRect(fenetre, 0, SDL_MapRGB(fenetre->format, 2, 33, 0));
 
         SDL_BlitSurface( bg ,NULL, fenetre, &imagebg );
-        score(t1);
+        temps(t1);
         SDL_BlitSurface( grille1 ,NULL, fenetre, &imagegd1 );
         SDL_BlitSurface( grille2 ,NULL, fenetre, &imagegd2 );
         SDL_BlitSurface( grille3 ,NULL, fenetre, &imagegd3 );
@@ -5215,8 +5170,8 @@ void game()
     while(1)
     {
         srand(time(NULL));
-        int g = rand() % 5;
-        g++;
+        int g = (rand()%(5-0+1));
+       
         switch(g)
         {
         case 0:
