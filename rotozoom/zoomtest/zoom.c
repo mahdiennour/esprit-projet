@@ -2,12 +2,11 @@
 #include <stdio.h>
 #include <SDL/SDL.h>
 #include <SDL/SDL_rotozoom.h>
-#include "zoom.h"
+ 
 #define TEMPS       30 // Le temps qu'il y a entre chaque augmentation de l'angle.
  
-SDL_Surface * rotozoomSurface (SDL_Surface *src,double angle,double zoom, int smooth)
+int main(int argc, char *argv[])
 {
-
     SDL_Surface *ecran = NULL, *image = NULL, *rotation = NULL;
     SDL_Rect rect;
     SDL_Event event;
@@ -64,6 +63,7 @@ SDL_Surface * rotozoomSurface (SDL_Surface *src,double angle,double zoom, int sm
         if(sens == 0){zoom -= 0.02;}
         else{zoom += 0.02;}
  
+ 
         SDL_Flip(ecran);
     }
  
@@ -71,5 +71,5 @@ SDL_Surface * rotozoomSurface (SDL_Surface *src,double angle,double zoom, int sm
     SDL_FreeSurface(image);
     SDL_Quit();
  
-    return 0;
+    return EXIT_SUCCESS;
 }
